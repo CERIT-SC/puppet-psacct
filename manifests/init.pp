@@ -8,6 +8,7 @@ class psacct (
 ) inherits psacct::params {
 
   validate_bool($enable)
+  validate_bool($etc_default)
 
   class { 'psacct::install':
     packages => $packages,
