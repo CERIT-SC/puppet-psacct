@@ -22,7 +22,7 @@ Setup process accouting
 Full configuration options:
 
     class { 'psacct':
-	  enable      => true|false,  # enable state
+	  enabled     => true|false,  # enable state
 	  logging     => 30,          # days to keep log history
 	  etc_default => true|false,  # modify /etc/default/acct
 	  logfile     => '...',       # accounting log file

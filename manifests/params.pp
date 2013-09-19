@@ -1,20 +1,20 @@
 class psacct::params {
-  $enable = true
+  $enabled = true
   $logging = 30
 
   case $::operatingsystem {
     debian,ubuntu: {
-      $packages    = ['acct']
-      $service     = 'acct'
+      $packages = ['acct']
+      $service = 'acct'
       $etc_default = true
-      $logfile     = '/var/log/account/pacct'
+      $logfile = '/var/log/account/pacct'
     }
 
     redhat,centos,oraclelinux: {
-      $packages    = ['psacct']
-      $service     = 'psacct'
+      $packages = ['psacct']
+      $service = 'psacct'
       $etc_default = false
-      $logfile     = '/var/account/pacct'
+      $logfile = '/var/account/pacct'
     }
 
     default: {

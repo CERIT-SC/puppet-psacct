@@ -1,16 +1,16 @@
 class psacct::service (
-  $enable,
+  $enabled,
   $service,
   $logfile
 ) {
-  $_ensure = $enable ? {
+  $_ensure = $enabled ? {
     true  => running,
     false => stopped,
   }
 
   service { $service:
     ensure => $_ensure,
-    enable => $enable,
+    enable => $enabled,
 
     #VH: we think the process accounting is working if
     #logfile has been changed recently and is not empty
