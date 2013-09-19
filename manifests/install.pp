@@ -1,7 +1,13 @@
 class psacct::install (
-  $packages
+  $packages,
+  $enabled
 ) {
+  $_ensure = $enabled ? {
+    true  => present,
+    false => absent
+  }
+
   package { $packages:
-    ensure => installed,
+    ensure => $_ensure,
   }
 }

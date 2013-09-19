@@ -11,6 +11,7 @@ class psacct (
   validate_bool($etc_default)
 
   class { 'psacct::install':
+    enabled  => $enabled,
     packages => $packages,
   }
 
@@ -21,14 +22,22 @@ class psacct (
   }
 
   class { 'psacct::service':
-    service => $service,
     enabled => $enabled,
+    service => $service,
     logfile => $logfile,
   }
 
-  anchor { 'psacct::begin': ; }
-    -> Class['psacct::install']
-    -> Class['psacct::config']
-    ~> Class['psacct::service']
-    -> anchor { 'psacct::end': ; }
+  if $enabled {
+    anchor { 'psacct::begin': ; }
+      -> Class['psacct::install']
+      -> Class['psacct::config']
+      ~> Class['psacct::service']
+      -> anchor { 'psacct::end': ; }
+  } else {
+    anchor { 'psacct::begin': ; }
+      -> Class['psacct::service']
+      -> Class['psacct::config']
+      -> Class['psacct::install']
+      -> anchor { 'psacct::end': ; }
+  }
 }
