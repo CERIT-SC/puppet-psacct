@@ -7,6 +7,8 @@ class psacct::config (
     $_enabled = bool2num($enabled)
 
     augeas { 'etc_default_acct':
+      incl    => '/etc/default/acct',
+      lens    => 'Shellvars.lns',
       context => '/files/etc/default/acct/',
       changes => [
         "set ACCT_ENABLE  '\"${_enabled}\"'",
