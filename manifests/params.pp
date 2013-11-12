@@ -17,6 +17,13 @@ class psacct::params {
       $logfile = '/var/account/pacct'
     }
 
+    sles,sled: {
+      $packages = ['acct']
+      $service = 'acct'
+      $etc_default = false
+      $logfile = '/var/account/pacct'
+    }
+
     default: {
       fail("Unsupported OS: ${::operatingsystem}")
     }
