@@ -1,5 +1,7 @@
 ## 2014-09-02 - Release 0.9.3
 
+### Summary
+
 Fix metadata.json
 
 #### Bugfixes

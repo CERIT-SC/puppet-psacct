@@ -34,7 +34,6 @@ class { 'psacct':
 }
 ```
 
-
 # Contributors:
 
 * Rob Ruma <robruma@gmail.com>
