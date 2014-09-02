@@ -1,6 +1,6 @@
 {
   "name": "ceritsc-psacct",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "author": "ceritsc",
   "summary": "Linux process accounting",
   "license": "MIT",

@@ -34,6 +34,11 @@ class { 'psacct':
 }
 ```
 
+
+# Contributors:
+
+* Rob Ruma <robruma@gmail.com>
+
 ***
 
 CERIT Scientific Cloud, <support@cerit-sc.cz>
