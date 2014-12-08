@@ -1,6 +1,6 @@
 {
   "name": "ceritsc-psacct",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "author": "ceritsc",
   "summary": "Linux process accounting",
   "license": "MIT",
@@ -51,9 +51,6 @@
     }
   ],
   "dependencies": [
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 4.0.0"
-    }
+    {"name":"puppetlabs/stdlib","version_requirement":">= 4.0.0"}
   ]
 }
