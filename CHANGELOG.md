@@ -1,3 +1,11 @@
+## 2016-04-22 - Release 0.9.5
+
+Support Fedora, Scientific Linux 6 and Debian 8.
+
+#### Features
+
+- Support Fedora, SL6 and D8.
+
 ## 2014-12-08 - Release 0.9.4
 
 Fix file/directory permissions.

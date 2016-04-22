@@ -1,12 +1,15 @@
 {
   "name": "ceritsc-psacct",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "author": "ceritsc",
   "summary": "Linux process accounting",
   "license": "MIT",
   "source": "https://github.com/CERIT-SC/puppet-psacct.git",
   "project_page": "https://github.com/CERIT-SC/puppet-psacct",
   "issues_url": "https://github.com/CERIT-SC/puppet-psacct/issues",
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 4.0.0"}
+  ],
   "tags": [
     "psacct",
     "process accounting",
@@ -21,28 +24,39 @@
     },
     {
       "operatingsystem": "CentOS",
-      "operatingsystemmajrelease": [
+      "operatingsystemrelease": [
         "6"
       ]
     },
     {
       "operatingsystem": "Scientific",
-      "operatingsystemmajrelease": [
+      "operatingsystemrelease": [
         "6"
       ]
+    },
+    {
+      "operatingsystem": "Fedora"
     },
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
         "6",
-        "7"
+        "7",
+        "8"
       ]
     },
     {
       "operatingsystem": "SLES",
       "operatingsystemrelease": [
-        "11.2",
-        "11.3"
+        "11 SP3",
+        "11 SP4"
+      ]
+    },
+    {
+      "operatingsystem": "SLED",
+      "operatingsystemrelease": [
+        "11 SP3",
+        "11 SP4"
       ]
     }
   ],
@@ -55,8 +69,5 @@
       "name": "puppet",
       "version_requirement": "3.2"
     }
-  ],
-  "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 4.0.0"}
   ]
 }
