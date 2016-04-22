@@ -10,7 +10,7 @@ class psacct::params {
       $logfile = '/var/log/account/pacct'
     }
 
-    redhat,centos,oraclelinux: {
+    fedora,redhat,centos,scientific,oraclelinux: {
       $packages = ['psacct']
       $service = 'psacct'
       $etc_default = false
