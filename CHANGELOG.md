@@ -1,3 +1,11 @@
+## 2016-04-22 - Release 0.9.6
+
+Support for RHEL 7 and clones in metadata.
+
+#### Features
+
+- Support for RHEL 7 and clones in metadata.
+
 ## 2016-04-22 - Release 0.9.5
 
 Support Fedora, Scientific Linux 6 and Debian 8.

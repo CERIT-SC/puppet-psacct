@@ -7,7 +7,7 @@ This module enables Linux process accounting.
 Module has been tested on:
 
 * Puppet 3.2
-* Debian 6,7,8 and RHEL/CentOS 6, SLES/SLED
+* Debian 6,7,8 and RHEL/CentOS 6,7 and SLES/SLED
 
 Required modules:
 
