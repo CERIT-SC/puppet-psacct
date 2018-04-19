@@ -2,22 +2,22 @@ class psacct::params {
   $enabled = true
   $logging = 30
 
-  case $::operatingsystem {
-    debian,ubuntu: {
+  case $facts['os']['name'] {
+    'Debian', 'Ubuntu': {
       $packages = ['acct']
       $service = 'acct'
       $etc_default = true
       $logfile = '/var/log/account/pacct'
     }
 
-    fedora,redhat,centos,scientific,oraclelinux: {
+    'Fedora', 'RedHat', 'CentOS', 'Scientific', 'OracleLinux': {
       $packages = ['psacct']
       $service = 'psacct'
       $etc_default = false
       $logfile = '/var/account/pacct'
     }
 
-    sles,sled: {
+    'SLES', 'SLED': {
       $packages = ['acct']
       $service = 'acct'
       $etc_default = false
@@ -25,7 +25,7 @@ class psacct::params {
     }
 
     default: {
-      fail("Unsupported OS: ${::operatingsystem}")
+      fail("Unsupported OS: ${facts['os']['name']}")
     }
   }
 }

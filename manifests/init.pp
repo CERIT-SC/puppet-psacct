@@ -1,43 +1,26 @@
 class psacct (
-  $enabled     = $psacct::params::enabled,
-  $logging     = $psacct::params::logging,
-  $etc_default = $psacct::params::etc_default,
-  $logfile     = $psacct::params::logfile,
-  $packages    = $psacct::params::packages,
-  $service     = $psacct::params::service
+  Boolean $enabled              = $psacct::params::enabled,
+  Integer $logging              = $psacct::params::logging,
+  Boolean $etc_default          = $psacct::params::etc_default,
+  Stdlib::Absolutepath $logfile = $psacct::params::logfile,
+  Array[String[1], 1] $packages = $psacct::params::packages,
+  String[1] $service            = $psacct::params::service
 ) inherits psacct::params {
 
-  validate_bool($enabled)
-  validate_bool($etc_default)
-
-  class { 'psacct::install':
-    enabled  => $enabled,
-    packages => $packages,
-  }
-
-  class { 'psacct::config':
-    enabled     => $enabled,
-    logging     => $logging,
-    etc_default => $etc_default,
-  }
-
-  class { 'psacct::service':
-    enabled => $enabled,
-    service => $service,
-    logfile => $logfile,
-  }
+  contain psacct::install
+  contain psacct::service
 
   if $enabled {
-    anchor { 'psacct::begin': ; }
-      -> Class['psacct::install']
+    contain psacct::config
+
+    Class['psacct::install']
       -> Class['psacct::config']
       ~> Class['psacct::service']
-      -> anchor { 'psacct::end': ; }
+
+    Class['psacct::install']
+      ~> Class['psacct::service']
   } else {
-    anchor { 'psacct::begin': ; }
-      -> Class['psacct::service']
-      -> Class['psacct::config']
+    Class['psacct::service']
       -> Class['psacct::install']
-      -> anchor { 'psacct::end': ; }
   }
 }

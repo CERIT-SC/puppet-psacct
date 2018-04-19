@@ -1,13 +1,12 @@
-class psacct::install (
-  $packages,
-  $enabled
-) {
-  $_ensure = $enabled ? {
+class psacct::install {
+  assert_private()
+
+  $_ensure = $psacct::enabled ? {
     true  => present,
     false => absent
   }
 
-  package { $packages:
+  package { $psacct::packages:
     ensure => $_ensure,
   }
 }
