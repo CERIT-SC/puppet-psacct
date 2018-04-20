@@ -1,3 +1,8 @@
+# psacct::service
+#
+# Private class to start/stop the process accounting service
+#
+# @summary Private class to start/stop the process accounting service
 class psacct::service {
   assert_private()
 

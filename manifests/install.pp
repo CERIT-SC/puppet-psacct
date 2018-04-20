@@ -1,3 +1,8 @@
+# psacct::install
+#
+# Private class to (un)install process accounting packages
+#
+# @summary Private class to (un)install process accounting packages
 class psacct::install {
   assert_private()
 

@@ -1,3 +1,8 @@
+# psacct::params
+#
+# Private class with module parameters
+#
+# @summary Private class with module parameters
 class psacct::params {
   $enabled = true
   $logging = 30

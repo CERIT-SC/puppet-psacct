@@ -1,3 +1,18 @@
+# psacct
+#
+# Install, configure and start the process accounting.
+#
+# @summary Manage process accounting.
+#
+# @param enabled Enable state.
+# @param logging Days to keep log history.
+# @param etc_default Enable modification of /etc/default/acct.
+# @param logfile Accounting log file.
+# @param packages List of packages to install.
+# @param service Service name.
+#
+# @example
+#   include psacct
 class psacct (
   Boolean $enabled              = $psacct::params::enabled,
   Integer $logging              = $psacct::params::logging,

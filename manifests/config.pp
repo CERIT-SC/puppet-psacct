@@ -1,3 +1,8 @@
+# psacct::config
+#
+# Private class to configure process accounting
+#
+# @summary Private class to configure process accounting
 class psacct::config {
   assert_private()
 
