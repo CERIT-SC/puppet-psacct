@@ -19,6 +19,7 @@ describe 'psacct' do
 
       context 'with default values' do
         it { is_expected.to compile }
+        it { is_expected.to contain_class('psacct') }
 
         it {
           is_expected.to contain_class('psacct::install')
@@ -64,6 +65,7 @@ describe 'psacct' do
         let(:params) { { 'enabled' => false } }
 
         it { is_expected.to compile }
+        it { is_expected.to contain_class('psacct') }
         it { is_expected.to contain_class('psacct::service') }
         it { is_expected.not_to contain_class('psacct::config') }
         it { is_expected.not_to contain_exec('psacct::service::check') }
@@ -106,6 +108,7 @@ describe 'psacct' do
         end
 
         it { is_expected.to compile }
+        it { is_expected.to contain_class('psacct') }
         it { is_expected.to contain_class('psacct::install') }
         it { is_expected.to contain_class('psacct::config') }
         it { is_expected.to contain_class('psacct::service') }
@@ -131,6 +134,8 @@ describe 'psacct' do
           }
         end
 
+        it { is_expected.to compile }
+        it { is_expected.to contain_class('psacct') }
         it { is_expected.not_to contain_augeas('psacct::config::etc_default_acct') }
       end
     end
