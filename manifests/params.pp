@@ -11,21 +11,21 @@ class psacct::params {
     'Debian', 'Ubuntu': {
       $packages = ['acct']
       $service = 'acct'
-      $etc_default = true
+      $manage_etc_default_acct = true
       $logfile = '/var/log/account/pacct'
     }
 
     'Fedora', 'RedHat', 'CentOS', 'Scientific', 'OracleLinux': {
       $packages = ['psacct']
       $service = 'psacct'
-      $etc_default = false
+      $manage_etc_default_acct = false
       $logfile = '/var/account/pacct'
     }
 
     'SLES', 'SLED': {
       $packages = ['acct']
       $service = 'acct'
-      $etc_default = false
+      $manage_etc_default_acct = false
       $logfile = '/var/account/pacct'
     }
 

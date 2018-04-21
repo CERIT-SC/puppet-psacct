@@ -25,12 +25,12 @@ Full configuration options:
 
 ```puppet
 class { 'psacct':
-  enabled     => true|false,  # enable state
-  logging     => 30,          # days to keep log history
-  etc_default => true|false,  # modify /etc/default/acct
-  logfile     => '...',       # accounting log file
-  packages    => [...],       # list of packages to install
-  service     => '...',       # service name
+  enabled                 => true|false,  # enable state
+  logging                 => 30,          # days to keep log history
+  manage_etc_default_acct => true|false,  # modify /etc/default/acct
+  logfile                 => '...',       # accounting log file
+  packages                => [...],       # list of packages to install
+  service                 => '...',       # service name
 }
 ```
 
