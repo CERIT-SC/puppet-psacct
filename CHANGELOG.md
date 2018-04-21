@@ -1,3 +1,9 @@
+## 2018-04-22 - Release 1.0.0
+
+- Modernize for Puppet 4/5
+- Convert to PDK module
+- Add tests
+
 ## 2016-04-22 - Release 0.9.6
 
 Support for RHEL 7 and clones in metadata.

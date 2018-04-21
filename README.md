@@ -6,12 +6,12 @@ This module enables Linux process accounting.
 
 Module has been tested on:
 
-* Puppet 3.2
-* Debian 6,7,8 and RHEL/CentOS 6,7 and SLES/SLED
+* Puppet 5.5
+* Debian 7,8,9 and RHEL/CentOS 6,7 and SLES/SLED
 
 Required modules:
 
-* stdlib (https://github.com/puppetlabs/puppetlabs-stdlib)
+* [puppetlabs-stdlib](https://github.com/puppetlabs/puppetlabs-stdlib)
 
 # Quick Start
 
